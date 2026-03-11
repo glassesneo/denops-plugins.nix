@@ -1,0 +1,14 @@
+[
+  {
+    "tag_name": "2.1.0-draft",
+    "draft": true,
+    "prerelease": false,
+    "published_at": "2024-10-10T00:00:00Z"
+  },
+  {
+    "tag_name": "2.1.0-rc1",
+    "draft": false,
+    "prerelease": true,
+    "published_at": "2024-10-11T00:00:00Z"
+  }
+]
