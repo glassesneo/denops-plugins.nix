@@ -33,7 +33,7 @@ From another flake:
 
 ```nix
 {
-  inputs.denops-plugins.url = "github:<owner>/denops-plugins.nix";
+  inputs.denops-plugins.url = "github:glassesneo/denops-plugins.nix";
 
   outputs = { self, nixpkgs, denops-plugins, ... }:
     let
@@ -52,7 +52,7 @@ From another flake:
 
 ```nix
 {
-  inputs.denops-plugins.url = "github:<owner>/denops-plugins.nix";
+  inputs.denops-plugins.url = "github:glassesneo/denops-plugins.nix";
 
   outputs = { self, nixpkgs, denops-plugins, ... }:
     let
@@ -105,7 +105,7 @@ Keep Home Manager on the same `nixpkgs` revision and let Neovim wrap runtime dep
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    denops-plugins.url = "github:<owner>/denops-plugins.nix";
+    denops-plugins.url = "github:glassesneo/denops-plugins.nix";
   };
 
   outputs = { nixpkgs, home-manager, denops-plugins, ... }:
