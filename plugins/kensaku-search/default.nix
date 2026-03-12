@@ -2,20 +2,21 @@
   pkgs,
   lib ? pkgs.lib,
   helpers,
+  kensaku,
 }:
 let
   pin = builtins.fromJSON (builtins.readFile ./hashes.json);
 in
 helpers.mkDenopsPlugin {
-  pname = "skkeleton";
+  pname = "kensaku-search";
   version = pin.version;
   src = pkgs.fetchFromGitHub {
     inherit (pin) hash owner repo rev;
   };
-  runtimeDeps = [pkgs.deno];
+  dependencies = [kensaku];
   meta = with lib; {
-    description = "SKK for Vim and Neovim powered by denops.vim";
+    description = "Use kensaku.vim as search with / command";
     homepage = "https://github.com/${pin.owner}/${pin.repo}";
-    license = licenses.zlib;
+    license = licenses.mit;
   };
 }

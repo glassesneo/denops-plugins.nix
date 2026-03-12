@@ -47,6 +47,9 @@
 
         overlayVimPackageInfo = overlayPkgs.neovimUtils.makeVimPackageInfo [
           overlayPkgs.vimPlugins.skkeleton
+          overlayPkgs.vimPlugins.kensaku
+          overlayPkgs.vimPlugins.kensaku-search
+          overlayPkgs.vimPlugins.fuzzy-motion
         ];
 
         overlayPackDir = overlayPkgs.neovimUtils.packDir {
@@ -56,8 +59,11 @@
         packages = plugins;
 
         checks = {
-          overlay-skkeleton-consumer = overlayPkgs.runCommandNoCC "overlay-skkeleton-consumer" {} ''
+          overlay-consumer = overlayPkgs.runCommandNoCC "overlay-consumer" {} ''
             test -d "${overlayPackDir}/pack/repoCheck/start/skkeleton"
+            test -d "${overlayPackDir}/pack/repoCheck/start/kensaku"
+            test -d "${overlayPackDir}/pack/repoCheck/start/kensaku-search"
+            test -d "${overlayPackDir}/pack/repoCheck/start/fuzzy-motion"
             test -d "${overlayPackDir}/pack/repoCheck/start/denops.vim"
             touch "$out"
           '';

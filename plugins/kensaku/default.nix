@@ -7,15 +7,15 @@ let
   pin = builtins.fromJSON (builtins.readFile ./hashes.json);
 in
 helpers.mkDenopsPlugin {
-  pname = "skkeleton";
+  pname = "kensaku";
   version = pin.version;
   src = pkgs.fetchFromGitHub {
     inherit (pin) hash owner repo rev;
   };
   runtimeDeps = [pkgs.deno];
   meta = with lib; {
-    description = "SKK for Vim and Neovim powered by denops.vim";
+    description = "Fuzzy Japanese search for Vim/Neovim powered by denops.vim";
     homepage = "https://github.com/${pin.owner}/${pin.repo}";
-    license = licenses.zlib;
+    license = licenses.mit;
   };
 }
